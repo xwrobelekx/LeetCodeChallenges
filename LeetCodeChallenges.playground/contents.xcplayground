@@ -3,5 +3,6 @@
     <pages>
         <page name='121. Best Time to Sell Buy Stock - Easy'/>
         <page name='1. Two Sum - Easy'/>
+        <page name='217. Contains Duplicate - Easy'/>
     </pages>
 </playground>
