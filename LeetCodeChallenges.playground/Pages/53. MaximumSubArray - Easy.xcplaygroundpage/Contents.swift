@@ -8,24 +8,41 @@ import Foundation
  A subarray is a contiguous part of an array.
  */
 
-func maxSubArray(_ nums: [Int]) -> Int {
+//func maxSubArray(_ nums: [Int]) -> Int {
+//
+//       if nums.isEmpty {
+//           return Int.min
+//       }
+//       var maxSum = nums[0]
+//       var currentSum = nums[0]
+//
+//       for i in 1..<nums.count {
+//           let num = nums[i]
+//           let curMax = max(currentSum + num, num)
+//           maxSum = max(maxSum, curMax)
+//           currentSum = curMax
+//       }
+//
+//       return maxSum
+//
+//   }
 
-       if nums.isEmpty {
-           return Int.min
-       }
-       var maxSum = nums[0]
-       var currentSum = nums[0]
-           
-       for i in 1..<nums.count {
-           let num = nums[i]
-           let curMax = max(currentSum + num, num)
-           maxSum = max(maxSum, curMax)
-           currentSum = curMax
-       }
-       
-       return maxSum
-       
-   }
+
+
+
+func maxSubArray(_ nums: [Int]) -> Int {
+    
+    var currentSum = nums[0]
+    var maxSum = nums[0]
+    
+    for i in 1..<nums.count {
+        currentSum = max(nums[i], currentSum + nums[i])
+        maxSum = max(maxSum, currentSum)
+        
+    }
+    return maxSum
+    
+}
 
 
 
