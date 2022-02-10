@@ -6,5 +6,6 @@
         <page name='217. Contains Duplicate - Easy'/>
         <page name='238. Product of Array Except  Self - Medium'/>
         <page name='53. MaximumSubArray - Easy'/>
+        <page name='152. MaxProductSubArray - Medium'/>
     </pages>
 </playground>
