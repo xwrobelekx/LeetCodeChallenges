@@ -44,6 +44,30 @@ class MergeSortedArrayTests: XCTestCase {
         
         XCTAssertEqual(nums1, output)
     }
+    
+    func testSecondArrayEmpty() {
+        var nums1 = [1]
+        let m = 1
+        let nums2: [Int] = []
+        let n = 0
+        let output = [1]
+        
+        merge(&nums1, m, nums2, n)
+        
+        XCTAssertEqual(nums1, output)
+    }
+    
+    func testFirstArrayEmpty() {
+        var nums1: [Int] = []
+        let m = 0
+        let nums2 = [1]
+        let n = 1
+        let output = [1]
+        
+        merge(&nums1, m, nums2, n)
+        
+        XCTAssertEqual(nums1, output)
+    }
 }
 
 MergeSortedArrayTests.defaultTestSuite.run()
