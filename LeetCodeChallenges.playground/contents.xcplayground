@@ -13,5 +13,6 @@
         <page name='977. Squares of  a sorted array - Easy'/>
         <page name='189. Rotate Array - Medium'/>
         <page name='26. Remove Duplicates from Sorted Array - Easy'/>
+        <page name='88. Merge sorted array - Easy'/>
     </pages>
 </playground>
