@@ -29,9 +29,32 @@ import Foundation
  */
 
 
-
-
-
+func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
+    //        let targetServiceURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
+    //        let client = URLSessionHTTPClient()
+    //        let loader = RemoteFeedLoader(url: targetServiceURL, client: client)
+    //
+    //        let exp = expectation(description: "Wait for load completion")
+    //
+    //        var receivedResult: LoadResult?
+    //        loader.load { result in
+    //            receivedResult = result
+    //            exp.fulfill()
+    //        }
+    //        wait(for: [exp], timeout: 5.0)
+    //
+    //        switch receivedResult {
+    //        case let .success(items)?:
+    //            XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
+    //
+    //        case let .failure(error)?:
+    //            XCTFail("Expected successful feed result, got \(error) instead")
+    //
+    //        default:
+    //            XCTFail("Expected successful feed result, for no result instead")
+    //        }
+    
+}
 
 func removeDuplicates(_ nums: inout [Int]) -> Int {
         guard nums.count > 1 else { return 0}
@@ -47,8 +70,6 @@ func removeDuplicates(_ nums: inout [Int]) -> Int {
             }
             
         }
-    
-        
         return count
     }
 
@@ -59,34 +80,19 @@ removeDuplicates(&input)
 import XCTest
 
 class RemoveDuplicates: XCTestCase {
-    
-    
     func testExample(){
         var input = [1, 1, 2]
         var output = removeDuplicates(&input)
         XCTAssertEqual(output, 2, "Failed on example test one")
-        
     }
     
     func testExampleTwo(){
         var input = [0,0,1,1,1,2,2,3,3,4]
         var output = removeDuplicates(&input)
         XCTAssertEqual(output, 5, "Failed on example test two")
-        
     }
-    
-    
-    
 }
 
-
 RemoveDuplicates.defaultTestSuite.run()
-
-
-
-
-
-
-
 
 //: [Next](@next)
