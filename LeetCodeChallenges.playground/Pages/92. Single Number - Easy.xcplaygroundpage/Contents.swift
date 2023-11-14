@@ -40,6 +40,10 @@ func singleNumber2(_ nums: [Int]) -> Int {
     return res
 }
 
+// This solution is definitely interesting.
+// It run the XOR operation on bits of first number or current value xORValue and the next number
+// Which makes the number to go up or down, resulting in the correct output.
+// Very clever
 func singleNumber3(_ nums: [Int]) -> Int {
     var xOrValue: Int = 0
     
