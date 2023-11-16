@@ -3,5 +3,6 @@
     <pages>
         <page name='242. Valid Anagram - Easy'/>
         <page name='217. Contains Duplicates - Easy'/>
+        <page name='1. Two Sum'/>
     </pages>
 </playground>
