@@ -3,6 +3,7 @@
 import Foundation
 
 // 88. Merge sorted array - Easy
+
 // Link: https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&envId=top-interview-150
 
 // Objective:
@@ -23,13 +24,11 @@ import Foundation
 
 
 // MARK: - Solution:
-
 func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
     nums1 = (nums1[..<m] + nums2).sorted()
 }
 
 // MARK: - Tests
-
 import XCTest
 
 class MergeSortedArrayTests: XCTestCase {

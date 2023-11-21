@@ -2,6 +2,7 @@
 
 import Foundation
 
+// 121. Best time to buy a stock
 
 /*
  You are given an array prices where prices[i] is the price of a given stock on the ith day.
@@ -11,7 +12,7 @@ import Foundation
  Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
  */
 
-
+// MARK: - My Solution
 //Big O(n)
 func maxProfit(_ prices: [Int]) -> Int {
     var value : Int?
@@ -30,11 +31,7 @@ func maxProfit(_ prices: [Int]) -> Int {
     return profit
 }
 
-
-
-
-
-
+// MARK: - Tests
 import XCTest
 
 class StockProfitTests : XCTestCase {
@@ -42,22 +39,16 @@ class StockProfitTests : XCTestCase {
     func testProfitOfFive(){
         let input = [7,1,5,3,6,4]
         let output = 5
-        XCTAssertEqual(maxProfit(input), output, "❌ Failed one max profit of Five")
+        XCTAssertEqual(maxProfit(input), output)
     }
     
     func testProfitOfZero(){
         let input = [7,6,4,3,1]
         let output = 0
-        XCTAssertEqual(maxProfit(input), output, "❌ Failed one max profit of Zero")
+        XCTAssertEqual(maxProfit(input), output)
     }
-    
-    
-    
 }
 
 StockProfitTests.defaultTestSuite.run()
-
-
-
 
 //: [Next](@next)

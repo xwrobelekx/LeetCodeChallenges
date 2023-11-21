@@ -2,6 +2,8 @@
 
 import Foundation
 
+// 26. Remove Duplicates from Sorted Array
+
 /*
  Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 
@@ -10,73 +12,27 @@ import Foundation
  Return k after placing the final result in the first k slots of nums.
 
  Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
- 
- 
- Example 1:
-
- Input: nums = [1,1,2]
- Output: 2, nums = [1,2,_]
- Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
- It does not matter what you leave beyond the returned k (hence they are underscores).
- Example 2:
-
- Input: nums = [0,0,1,1,1,2,2,3,3,4]
- Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
- Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
- It does not matter what you leave beyond the returned k (hence they are underscores).
- 
- 
  */
 
-
-func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
-    //        let targetServiceURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
-    //        let client = URLSessionHTTPClient()
-    //        let loader = RemoteFeedLoader(url: targetServiceURL, client: client)
-    //
-    //        let exp = expectation(description: "Wait for load completion")
-    //
-    //        var receivedResult: LoadResult?
-    //        loader.load { result in
-    //            receivedResult = result
-    //            exp.fulfill()
-    //        }
-    //        wait(for: [exp], timeout: 5.0)
-    //
-    //        switch receivedResult {
-    //        case let .success(items)?:
-    //            XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
-    //
-    //        case let .failure(error)?:
-    //            XCTFail("Expected successful feed result, got \(error) instead")
-    //
-    //        default:
-    //            XCTFail("Expected successful feed result, for no result instead")
-    //        }
+// MARK: - My Solution
+func removeDuplicates(_ nums: inout [Int]) -> Int {
+    guard nums.count > 1 else { return 0}
+    var currentNum = nums[0]
+    var count = 1
+    for i in 1..<nums.count {
+        if nums[i] == currentNum {
+            nums.remove(at: i)
+            nums.append(0)
+        } else {
+            currentNum = nums[i]
+            count += 1
+        }
+    }
     
+    return count
 }
 
-func removeDuplicates(_ nums: inout [Int]) -> Int {
-        guard nums.count > 1 else { return 0}
-        var currentNum = nums[0]
-        var count = 1
-        for i in 1..<nums.count {
-            if nums[i] == currentNum {
-                nums.remove(at: i)
-                nums.append(0)
-            } else {
-                currentNum = nums[i]
-                count += 1
-            }
-            
-        }
-        return count
-    }
-
-var input = [1, 1, 2]
-removeDuplicates(&input)
-
-
+// MARK: - Tests
 import XCTest
 
 class RemoveDuplicates: XCTestCase {

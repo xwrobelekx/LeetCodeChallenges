@@ -1,6 +1,6 @@
 import UIKit
 
-
+// 1. Two Sum
 /*
  Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -9,48 +9,45 @@ import UIKit
  You can return the answer in any order.
  */
 
-
-
-
-//func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-//    var output : [Int] = []
-//
-//    for (iIndex, iNumber) in nums.enumerated() {
-//        for (jIndex, jNumber) in nums.enumerated() {
-//            if iIndex != jIndex {
-//               if (iNumber + jNumber) == target {
-//                   output = [iIndex, jIndex]
-//               }
-//            }
-//        }
-//    }
-//    return output
-//}
-
-//func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-//
-//    var dictionary = [Int: Int]()
-//    var result = [Int]()
-//
-//    for (index, number) in nums.enumerated(){
-//        dictionary[number] = index
-//    }
-//
-//    for (index, number) in nums.enumerated() {
-//        let numberToFind = target - number
-//        if let otherIndex = dictionary[numberToFind], otherIndex != index {
-//            result = [otherIndex, index]
-//        }
-//    }
-//
-//    return result
-//}
-
-
-
-//Other Solutions:
-//Big O(n)
+// MARK: - My Solution
 func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+    var output : [Int] = []
+
+    for (iIndex, iNumber) in nums.enumerated() {
+        for (jIndex, jNumber) in nums.enumerated() {
+            if iIndex != jIndex {
+               if (iNumber + jNumber) == target {
+                   output = [iIndex, jIndex]
+               }
+            }
+        }
+    }
+    return output
+}
+
+func twoSum2(_ nums: [Int], _ target: Int) -> [Int] {
+    var dictionary = [Int: Int]()
+    var result = [Int]()
+
+    for (index, number) in nums.enumerated(){
+        dictionary[number] = index
+    }
+
+    for (index, number) in nums.enumerated() {
+        let numberToFind = target - number
+        if let otherIndex = dictionary[numberToFind], otherIndex != index {
+            result = [otherIndex, index]
+        }
+    }
+
+    return result
+}
+
+
+
+// MARK: - Other Solutions:
+//Big O(n)
+func twoSum3(_ nums: [Int], _ target: Int) -> [Int] {
        var dict: [Int:Int] = [:]
        for i in 0..<nums.count {
            print(dict)
@@ -64,37 +61,27 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
    }
 
 
+// Least amount of memory
+func twoSum4(_ nums: [Int], _ target: Int) -> [Int] {
+    var ans = [Int]()
+    for i in 0..<nums.count-1{
+        //second loop iterated thru the reminder of array no the whole thing
+        for j in i+1..<nums.count{
+            if nums[i]+nums[j]==target{
+                ans.append(i)
+                ans.append(j)
+                return ans
+            }
 
-////Other solution - least amout of memory
-//func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-//    var ans = [Int]()
-//    for i in 0..<nums.count-1{
-//        //second loop iterated thru the reminder of array no the whole thing
-//        for j in i+1..<nums.count{
-//            if nums[i]+nums[j]==target{
-//                ans.append(i)
-//                ans.append(j)
-//                return ans
-//            }
-//
-//        }
-//    }
-//    return ans
-//}
+        }
+    }
+    return ans
+}
 
-
-
-
-
-
-
-
+// MARK: - Tests
 import XCTest
 
-
 class TwoSumTests : XCTestCase {
-    
-
     func testExampleOne() {
         let inputNumers = [2,7,11,15]
         let target = 9
@@ -104,30 +91,25 @@ class TwoSumTests : XCTestCase {
         XCTAssertEqual(result.sorted(), expectation.sorted(), "❌ Failed on example test One")
     }
     
-
-    func testExampleTwo(){
-
+    func testExampleTwo() {
         let result = twoSum([3,2,4], 6)
         let expectation = [1,2]
         XCTAssertEqual(result.sorted(), expectation.sorted(), "❌ Failed on example test Two")
     }
 
-    func testExampleThree(){
+    func testExampleThree() {
         let result = twoSum([3,3], 6)
         let expectation = [0,1]
         XCTAssertEqual(result.sorted(), expectation.sorted(), "❌ Failed on example test Three")
     }
 
-    func testForANumberInTheMiddle(){
+    func testForANumberInTheMiddle() {
         let input = [3, 2, 3, 2, 5]
         let target = 6
         let result = twoSum(input, target)
         let output = [0,2]
         XCTAssertEqual(result.sorted(), output.sorted(), "❌ Failed on Number in the Middle" )
     }
-
 }
-
-
 
 TwoSumTests.defaultTestSuite.run()
