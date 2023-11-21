@@ -1,13 +1,15 @@
 # LeetCode Challenges
  
  
- This repo stores different challenges that i have completed on LeetCode.
+ This repo stores different challenges that I have completed on LeetCode.
  
  
  ### Organization:
  
- - There is one main playground that will have many pages.
- - Each page will hold a different problem.
+ - There is two main playgrounds that will have many pages.
+ - First playgrounds holds random Leet Code problems.
+ - Second Playground follow Need Code 150 list.
+ - Each playground page will hold a different problem.
  
  
  ### Naming convention:
@@ -22,8 +24,10 @@
   - Some other clever solutions from other users
   - Big O notation for my solution
   - XCTests
-  
 
+
+  Neet Code Link: 
+  https://neetcode.io/practice
 
 
 ### Enjoy
