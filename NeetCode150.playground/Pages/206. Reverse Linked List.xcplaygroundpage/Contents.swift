@@ -56,8 +56,23 @@ class ReverseLinkedListTest: XCTestCase {
         XCTAssertEqual(input.reversed(), numbers)
     }
 }
+
+class HelpersTests: XCTestCase {
+    func testParsingArrayToLinkedList() {
+        XCTAssertEqual(parse([1,2,3,4,5]).description, "1 -> 2 -> 3 -> 4 -> 5")
+    }
     
-//MARK: -  Helpers
+    func testConvertingLinkedListToArray() {
+        let inputArray = [1,2,3,4,5]
+        let linkedList = parse(inputArray)
+        
+        let returnedArray = convert(linkedList: linkedList)
+        
+        XCTAssertEqual(inputArray, returnedArray)
+    }
+}
+    
+// MARK: -  Helpers
 func parse(_ numbers: [Int]) -> ListNode {
     var currentNode: ListNode = ListNode(999)
     let node: ListNode = currentNode
@@ -95,6 +110,7 @@ extension ListNode: CustomStringConvertible {
     }
 }
 
+HelpersTests.defaultTestSuite.run()
 ReverseLinkedListTest.defaultTestSuite.run()
 
 //: [Next](@next)
