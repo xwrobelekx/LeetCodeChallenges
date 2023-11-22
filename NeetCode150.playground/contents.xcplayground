@@ -9,5 +9,7 @@
         <page name='20. Valid Parentheses - Easy'/>
         <page name='704. Binary Search - Easy'/>
         <page name='206. Reverse Linked List'/>
+        <page name='141. Linked List Cycle'/>
+        <page name='TEMPLATE'/>
     </pages>
 </playground>
