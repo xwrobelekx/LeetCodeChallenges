@@ -11,5 +11,7 @@
         <page name='206. Reverse Linked List'/>
         <page name='141. Linked List Cycle'/>
         <page name='TEMPLATE'/>
+        <page name='21. Merge Two Sorted Linked Lists - Easy'/>
+        <page name='1299. REplace elements witht he greatest element on the right side'/>
     </pages>
 </playground>
