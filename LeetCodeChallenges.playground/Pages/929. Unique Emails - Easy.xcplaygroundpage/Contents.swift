@@ -9,7 +9,6 @@ func numUniqueEmails(_ emails: [String]) -> Int {
     var uniqueEmails = Set<String>()
 
     for email in emails {
-        // string work
         let splitEmail = email.split(separator: "@")
         var localName = splitEmail[0]
         var domainName = splitEmail[1]
@@ -25,9 +24,6 @@ func numUniqueEmails(_ emails: [String]) -> Int {
 
     return uniqueEmails.count
 }
-
-
-// MARK: - Other Solutions
 
 
 // MARK: - Tests
