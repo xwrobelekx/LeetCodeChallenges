@@ -7,18 +7,21 @@ import Foundation
 // MARK: - My Solution
 func longestCommonPrefix(_ strs: [String]) -> String {
     var commonPrefix = ""
-    var firstWord = strs[0]
-
-    for char in firstWord {
-        for word in strs {
-            let array = Array(word)
-            
-            if index == array.count - 1 || array[index] != Array(firstWord)[index] {
-                return commonPrefix
-            }
-            commonPrefix += Array(arrayLiteral: firstWord)[index]
-        }
-    }
+    
+    // NOT Solved Yet
+    
+//    var firstWord = strs[0]
+//
+//    for char in firstWord {
+//        for word in strs {
+//            let array = Array(word)
+//            
+//            if index == array.count - 1 || array[index] != Array(firstWord)[index] {
+//                return commonPrefix
+//            }
+//            commonPrefix += Array(arrayLiteral: firstWord)[index]
+//        }
+//    }
 
     return commonPrefix
 }
