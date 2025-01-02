@@ -13,5 +13,8 @@
         <page name='TEMPLATE'/>
         <page name='21. Merge Two Sorted Linked Lists - Easy'/>
         <page name='1299. REplace elements witht he greatest element on the right side'/>
+        <page name='49. Groupped Anagrams - Medium'/>
+        <page name='347. Top K Frequent Elements - Medium'/>
+        <page name='128 Longest Consecutive Sequence - Medium'/>
     </pages>
 </playground>

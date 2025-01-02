@@ -14,6 +14,31 @@ func isPalindrome(_ s: String) -> Bool {
     return cleanChars == String(cleanChars.reversed())
 }
 
+// My other solution 
+// 23 ms, beats 57.5% of users on runtime speed,
+// 17.38MB beats 68% of user on memory
+func isPalindrome2(_ s: String) -> Bool {
+    guard s.count > 1 else {
+        return true
+    }
+
+    let array = Array(s.lowercased().filter { $0.isLetter || $0.isNumber })
+
+    var startIndex = 0
+    var endIndex = array.count - 1
+
+    while startIndex < endIndex {
+        if array[startIndex] != array[endIndex] {
+            return false
+        }
+
+        startIndex += 1
+        endIndex -= 1
+    }
+
+    return true
+}
+
 // MARK: - Other Solutions
 func isPalindrome2(_ s: String) -> Bool {
     let s = s.lowercased().filter { $0.isLetter || $0.isNumber }

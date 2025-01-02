@@ -20,6 +20,19 @@ func maxProfit(_ prices: [Int]) -> Int {
     return profit
 }
 
+// Neat and easy solution
+func maxProfit4(_ prices: [Int]) -> Int {
+    var maxProfit = 0
+    var lowestPrice = Int.max
+
+    for price in prices {
+        lowestPrice = min(lowestPrice, price)
+        maxProfit = max(maxProfit, price - lowestPrice)
+    }
+
+    return maxProfit
+}
+
 // 761 ms beats 25%, 18 MB beats 18%
 func maxProfit2(_ prices: [Int]) -> Int {
     var profit = 0
