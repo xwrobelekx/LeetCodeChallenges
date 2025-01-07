@@ -29,7 +29,7 @@ func thirdMax(_ nums: [Int]) -> Int {
 
 // MARK: - Other Solutions
 // Use set, this way you have unique numbers
-func thirdMax(_ nums: [Int]) -> Int {
+func thirdMax2(_ nums: [Int]) -> Int {
     var maxs = Set(nums).sorted()
     if maxs.count < 3 {
         return maxs.last!
@@ -38,7 +38,11 @@ func thirdMax(_ nums: [Int]) -> Int {
     }
 }
 
-
+func thirdMax2(_ nums: [Int]) -> Int {
+    var set = Set(nums)
+    var arr = Array(set.sorted(by: >))
+    return arr.count > 2 ? arr[2] : arr[0]
+}
 
 // MARK: - Tests
 import XCTest
