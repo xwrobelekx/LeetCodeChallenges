@@ -22,7 +22,6 @@ func romanToInt(_ s: String) -> Int {
             previous = num
         }
     }
-
     return total
 }
 
