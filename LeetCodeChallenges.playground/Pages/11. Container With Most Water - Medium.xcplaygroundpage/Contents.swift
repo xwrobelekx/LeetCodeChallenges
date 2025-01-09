@@ -27,6 +27,17 @@ func maxArea(_ height: [Int]) -> Int {
     return biggestArea
 }
 // MARK: - Other Solutions
+func maxArea2(_ height: [Int]) -> Int {
+    var (l, r) = (0, height.count - 1)
+    var ans = 0
+    while l < r {
+        let water = min(height[l], height[r]) * (r-l)
+        ans = max(ans, water)
+        if height[l] < height[r] { l += 1 }
+        else { r -= 1 }
+    }
+    return ans
+}
 
 
 // MARK: - Tests
