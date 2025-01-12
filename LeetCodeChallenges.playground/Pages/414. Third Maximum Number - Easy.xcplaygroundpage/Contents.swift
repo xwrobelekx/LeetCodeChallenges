@@ -38,7 +38,7 @@ func thirdMax2(_ nums: [Int]) -> Int {
     }
 }
 
-func thirdMax2(_ nums: [Int]) -> Int {
+func thirdMax3(_ nums: [Int]) -> Int {
     var set = Set(nums)
     var arr = Array(set.sorted(by: >))
     return arr.count > 2 ? arr[2] : arr[0]
