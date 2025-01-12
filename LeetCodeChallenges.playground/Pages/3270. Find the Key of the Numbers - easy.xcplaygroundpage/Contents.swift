@@ -21,7 +21,22 @@ func generateKey(_ num1: Int, _ num2: Int, _ num3: Int) -> Int {
 
 
 // MARK: - Other Solutions
-
+func generateKey2(_ num1: Int, _ num2: Int, _ num3: Int) -> Int {
+    let num1Str = String(format: "%04d", num1)
+    let num2Str = String(format: "%04d", num2)
+    let num3Str = String(format: "%04d", num3)
+    
+    var result = ""
+    for i in 0..<4 {
+        let digit1 = Int(String(num1Str[num1Str.index(num1Str.startIndex, offsetBy: i)]))!
+        let digit2 = Int(String(num2Str[num2Str.index(num2Str.startIndex, offsetBy: i)]))!
+        let digit3 = Int(String(num3Str[num3Str.index(num3Str.startIndex, offsetBy: i)]))!
+        
+        result.append(String(min(digit1, digit2, digit3)))
+    }
+    
+    return Int(result)!
+}
 
 // MARK: - Tests
 import XCTest
